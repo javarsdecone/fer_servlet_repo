@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>FER-Dashboard</title>
+		
+		<script>
+			function submitForm(nextPath) {
+				var form = document.DashboardForm;
+				
+				form.action = nextPath;
+				form.method = 'post';
+				
+				form.submit();
+			}
+		</script>
+		
+	</head>
+
+	<body>
+		<form action='' name='DashboardForm'>
+			<table align='center' border='1' height='600px' width='800px'>
+				<tr height='100px'>
+					<td colspan='2' align='center'>
+						Family Expense Report           User: 
