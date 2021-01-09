@@ -29,13 +29,13 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		int userId = ferService.login(req.getParameter("username"), req.getParameter("password"));
+		int userId = ferService.login(req.getParameter("userName"), req.getParameter("password"));
 
 		PrintWriter out = resp.getWriter();
 		if (userId > 0) {
 			
 			HttpSession session = req.getSession();
-			session.setAttribute("username", req.getParameter("username"));
+			session.setAttribute("username", req.getParameter("userName"));
 			session.setAttribute("userId", userId);
 			
 			LayoutUtil.displayHeaderAndLeftFrame(req, resp, out, session.getAttribute("username"));
